@@ -195,23 +195,57 @@ Kontrybuowanie do summon_process
 Forkujemy
 =========
 
-* nazwa - mirakuru
-* rozwój - w czasie pracy i w domu
+.. image:: fork.png
+    :align: center
 
 .. note::
 
-    * Oglądałem i dalej jestem w miarę na bierząco z serialem Arrow
-    * W sezonie 2, główny antagonista bohatera to Deathstroke, Slade Wilson
-        * Deadpool - Wade Wilson
-    * Deathstroke był pod wpływem mirakuru, Japońskiego serum superżołnierza z czasów WWII
-    * skutki - nadludzka siła, regenracja komórek... agresywność, halucynacje i żądza morderstwa.
+    * testy
+    * dokumentacja
+    * chęć ułożenia api jak chcemy...
+
+----
+
+rozwój - w pracy
+================
+
+.. image:: punchcard_work.png
+    :align: center
+
+----
+
+rozwój - w domu
+===============
+
+.. image:: punchcard_home.png
+    :align: center
+
+.. note::
+
+    * na początek - euforia - jak najszybciej do releasu
+
+----
+
+nazwa - mirakuru
+================
+
+.. image:: mirakuru_slade.jpg
+    :align: center
+
+.. note::
+
+    * 2 sezon serialu Arrow:
+    * Główny antagonista - Deathstroke/Slade Wilson (Deadpool - Wade Wilson)
+        * Pod wpływem mirakuru, Japońskiego serum nadczłowieka z czasów WWII
+    * skutki mirakuru
+        * nadludzka siła,
+        * regenracja...
+        * ale także agresywność, halucynacje i chęć mordestwa.
     * Z tego względu właśnie nazwa wydawała się odpowiednia:
-        * nadludzka siła, bo umożliwia testom sterowanie zewnętrznymi procesami, baza danych, aplikacja.
+        * nadludzka siła, sterowanie zewnętrznymi usługami: baza danych, aplikacja.
         * jeśli jednak popełnimy błąd, albo pojawi się jakis problem:
             * procesy mogą wyciec,
             * możemy wysycić zasoby
-    * rozwój paczki następuje zarówno w pracy jak i w domu
-
 
 ----
 
