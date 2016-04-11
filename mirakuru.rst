@@ -203,6 +203,7 @@ Forkujemy
     * testy
     * dokumentacja
     * chęć ułożenia api jak chcemy...
+    * zachowujemy historię!
 
 ----
 
@@ -325,10 +326,13 @@ zależności! ale tylko testowe
 Testy
 =====
 
-* py.test!
-* coverage
-* travis-ci.org
-* coveralls.io
+* .. image:: pytest1.png
+
+* coverage.py
+* .. image:: travis.png
+* .. image:: coveralls.png
+    :width: 150
+    :height: 150
 
 .. note::
 
@@ -346,15 +350,15 @@ Testy
 Styl i jakość kodu
 ==================
 
-* code review
+* dokument CONTRIBUTE z opisem
 * konkretne wymagania dotyczące stylu
-* opis słowny, czego wymagamy od kodu jest ok, ale pilnowanie w code-review...
+* code review
 
 .. note::
 
-    * wymagania - docstringi, zgodność z pep8
+    * ale pilnowanie w code-review...
+    * docstringi, zgodność z pep8
     * w code review nie zawsze wszystko jesteśmy w stanie wyłapać, jeśli chodzi o styl
-
 
 ----
 
@@ -397,14 +401,16 @@ QuantifiedCode & Landscape
 QuantifiedCode
 ==============
 
+* 5 głownych grup
 * Konfigurowalny
 * rozszerzalny
 * autofix!
 
 .. note::
 
+    * Poprawność, utrzymanie, wydajność, czytelność i bezpieczeństwo
     * Pozwala wyłączyć niektóre smrodki spośród tych, które będzie sprawdzać, ale również w drugą stronę, pozwala zdefiniować własne.
-    * posiada zdefiniowane smrodki specjalnie pod wybrane frameworki
+    * posiada zdefiniowane smrodki specjalnie pod wybrane frameworki (Django, Flask, Plone, Odoo)
     * dla niektórych smrodków potrafi sam stworzyć pull request
 
 
@@ -415,7 +421,9 @@ Requires.io
 ===========
 
 * obserwuje czy zależności są na czasie
-* tworzy pull-requesta, jeśli przypięte są stare
+* pull-request - jeśli są stare zależności
+
+.. image:: requires.png
 
 .. note::
 
