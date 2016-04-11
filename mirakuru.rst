@@ -71,7 +71,10 @@ Co to robi i dlaczego uprości ci życie?
     
     from mirakuru import OutputExecutor
 
-    process = OutputExecutor('processing.py', banner='started!')
+    process = OutputExecutor(
+        'processing.py',
+        banner='started!'
+    )
     process.start()  # Blocks until the process is started
 
     # Do your stuff
@@ -86,7 +89,11 @@ Co to robi i dlaczego uprości ci życie?
 
     from mirakuru import TCPExecutor
 
-    process = TCPExecutor('redis-server', host='localhost', port=1234)
+    process = TCPExecutor(
+        'redis-server',
+        host='localhost',
+        port=1234
+    )
     process.start()
 
     # Do your stuff
@@ -101,7 +108,10 @@ Co to robi i dlaczego uprości ci życie?
 
     from mirakuru import HTTPExecutor
 
-    process = HTTPExecutor('web_app.py', url='http://localhost:6543/status')
+    process = HTTPExecutor(
+        'web_app.py',
+        url='http://localhost:6543/status'
+    )
     process.start()
 
     # Do your stuff
@@ -116,7 +126,10 @@ Co to robi i dlaczego uprości ci życie?
 
     from mirakuru import HTTPExecutor
 
-    proc = HTTPExecutor('my_special_process', url='http://localhost:6543/status'):
+    proc = HTTPExecutor(
+        'my_special_process',
+        url='http://localhost:6543/status'
+    )
     with proc:
         # Do your stuff
         assert proc.running() is True
@@ -489,17 +502,22 @@ To the future
 
 * mirakuru jako narzędzie linii komend
 
-.. code-block:: python
+.. code-block:: bash
     
-    mirakuru tcp 127.0.0.1 5000 -- ./fancy_command.sh
+    $ mirakuru tcp 127.0.0.1 5000 \
+      -- ./fancy_command.sh
 
-    mirakuru tcp 127.0.0.1 5000 --timeout=20 --sig_stop='SIGKILL' -- ./fancy_command.sh
+    $ mirakuru tcp 127.0.0.1 5000 --timeout=20 \
+      --sig_stop='SIGKILL' -- ./fancy_command.sh
 
-    mirakuru http http://127.0.0.1:5000/check --shell=ture -- ./fancy_command -a "abc"
+    $ mirakuru http http://127.0.0.1:5000/check \
+      --shell=ture -- ./fancy_command -a "abc"
 
-    mirakuru out "has started." -- ./fancy_command -a "abc"
+    $ mirakuru out "has started." \
+      -- ./fancy_command -a "abc"
 
-    mirakuru pid /var/fancy_process/run.pid --timeout=100 -- ./fancy_command -a "abc"
+    $ mirakuru pid /var/fancy_process/run.pid \
+      --timeout=100 -- ./fancy_command -a "abc"
 
 
 ----
@@ -508,8 +526,21 @@ To the future
 Inne rozwiązania
 ================
 
-* subprocess (call, check_call, check_output, Popen)
+* subprocess
+
+    * call
+    * check_call
+    * check_output
+    * Popen
+
 * subprocess32 (timeout)
+
+
+----
+
+
+Inne rozwiązania
+================
 * EasyProcess
 
 .. code-block:: python
@@ -517,6 +548,17 @@ Inne rozwiązania
     >>> from easyprocess import EasyProcess
     >>> EasyProcess('python --version').call().stderr
     u'Python 2.7.11'
+
+* spawn_and_check
+
+.. code-block:: python
+
+    from spawn_and_check import execute, check_http
+    process = execute(
+        'run_some_service --port 8000',
+        [check_http('http://127.0.0.1:8000')],
+        timeout=10,
+    )
 
 
 ----
