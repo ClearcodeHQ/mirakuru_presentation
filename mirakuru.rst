@@ -3,22 +3,6 @@
 :css: base.css
 :skip-help: true
 
-1. Co to robi i dlaczego uprości ci życie                               ====== P
-2. Skąd się wzięło                                                      ====== G
-    * summon_process - problemy z kontrybuowaniem, długi czas reakcji   ====== G
-    * nazwa                                                             ====== G
-    * czy nazwa jest dobra?                                             ====== P
-3. Wspierane wersje (compat.py), systemy, no dependencies               ====== G
-4. Code quality                                                         ====== G
-5. Statystyki, licencja                                                 ====== P
-6. Mirakuru w pytest-dbfixtures                                         ====== P
-7. Problemy                                                             ====== P
-    * OSX                                                               ====== P
-    * Wyciekanie                                                        ====== P
-8. To the future                                                        ====== P
-9. Inne paczki                                                          ====== P
-
-
 ----
 
 
@@ -485,9 +469,49 @@ Zastosowanie mirakuru
 =====================
 
 * pytest-dbfixtures
+
+.. code-block:: python
+
+    def test_using_two_redis(redisdb, redisdb2):
+        redisdb.set('woof1', 'woof1')
+        redisdb2.set('woof2', 'woof12')
+
+        
+----
+
+
 * testy integracyjne
 
+.. code-block:: python
 
+    from mirakuru import Executor
+
+    class UnixSocketExecutor(Executor):
+
+        def __init__(self, command, socket, shell=False,
+                     timeout=None, sleep=0.1):
+            """Extend `mirakuru.HTTPExecutor` to store Unix socket path.
+
+            :param str socket: Unix socket path
+            """
+            super(UnixSocketExecutor, self) \
+                .__init__(command, shell, timeout, sleep)
+            self.socket = socket
+
+        def pre_start_check(self):
+            """Check that the Unix socket file doesn't exist."""
+            return Path(self.socket).exists()
+
+        def after_start_check(self):
+            """Check that the Unix socket file exist."""
+            return self.pre_start_check()
+
+        def stop(self):
+            """Delete the socket file after stopping the service."""
+            super(UnixSocketExecutor, self).stop()
+            Path(self.socket).remove_p()
+
+            
 ----
 
 
