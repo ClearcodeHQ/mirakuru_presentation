@@ -1,4 +1,23 @@
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville|Racing+Sans+One|Satisfy);
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Libre Baskerville'), local('LibreBaskerville-Regular'), url(librebaskerville.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Racing Sans One'), local('RacingSansOne-Regular'), url(racingsunsone.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Satisfy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Satisfy'), url(satisfy.ttf) format('truetype');
+}
 
 body {
     font-size: 200%;
