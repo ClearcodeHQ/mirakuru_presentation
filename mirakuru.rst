@@ -23,6 +23,11 @@ Paweł Wilczyński, Grzegorz Śliwiński
 
 ----
 
+.. image:: clearcode_logo.png
+
+
+----
+
 
 Co to robi i dlaczego uprości ci życie?
 =======================================
@@ -228,7 +233,6 @@ nazwa - mirakuru
 ================
 
 .. image:: mirakuru_slade.jpg
-    :align: center
 
 .. note::
 
@@ -373,6 +377,19 @@ Lintery? Enter pylama!
     * łatwość pisania pluginów z innymi linterami (pylint, gjslint dla javascript)
     * Istnienie pliku konfiguracyjnego pozwala określić jakiś początkowy zakres wymagań i powoli,
         pojedynczo wprowadzać kolejne
+
+
+----
+
+.. code-block:: ini
+    
+    [pylama]
+    linters = pep8,pyflakes,mccabe,pep257
+    skip = docs/*,build/*,venv/*
+    ignore = D203
+
+    [pylama:pep8]
+    max_line_length = 80
 
 
 ----
@@ -621,3 +638,12 @@ Bibliografia
 * `coveralls.io (code coverage tool) <http://coveralls.io/>`_
 * `QuantifiedCode <https://www.quantifiedcode.com/>`_
 * `Hovercraft rst presentations <http://hovercraft.readthedocs.org/>`_
+
+
+----
+
+
+Mirakuru
+========
+Czy można robić open source w ramach komercyjnych projektów?
+------------------------------------------------------------
