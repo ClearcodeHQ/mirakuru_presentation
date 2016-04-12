@@ -1,7 +1,6 @@
 :title: Mirakuru - czy można robić open source w ramach komercyjnych projektów?
 :data-transition-duration: 1000
 :css: base.css
-:skip-help: true
 
 ----
 
